@@ -36,67 +36,71 @@
             <div>
                 <h3 class="page-header">Currencies</h3>
 
-                <table id="blink" class="table table-bordered">
-                    <tbody>
-                        <tr>
-                            <th>EUR/USD</th>
-                            <th>AUD/USD</th>
-                            <th>GBP/USD</th>
-                            <th>USD/JPY</th>
-                        </tr>
-                        <tr>
-                            <td>1.3591</td>
-                            <td>0.8952</td>
-                            <td>1.6389</td>
-                            <td>102.4850</td>
-                        </tr>
-                        <tr>
-                            <th>EUR/JPY</th>
-                            <th>EUR/GBP</th>
-                            <th>USD/CAD</th>
-                            <th>USD/CHF</th>
-                        </tr>
-                        <tr>
-                            <td>139.2930</td>
-                            <td>0.8293</td>
-                            <td>1.0984</td>
-                            <td>0.9009</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table id="blink" class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th>EUR/USD</th>
+                                <th>AUD/USD</th>
+                                <th>GBP/USD</th>
+                                <th>USD/JPY</th>
+                            </tr>
+                            <tr>
+                                <td>1.3591</td>
+                                <td>0.8952</td>
+                                <td>1.6389</td>
+                                <td>102.4850</td>
+                            </tr>
+                            <tr>
+                                <th>EUR/JPY</th>
+                                <th>EUR/GBP</th>
+                                <th>USD/CAD</th>
+                                <th>USD/CHF</th>
+                            </tr>
+                            <tr>
+                                <td>139.2930</td>
+                                <td>0.8293</td>
+                                <td>1.0984</td>
+                                <td>0.9009</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div>
                 <h3 class="page-header">Operation</h3>
 
-                <table id="operation" class="table table-bordered">
-                    <tbody>
-                        <tr>
-                            <th>EUR/USD</th>
-                            <th>AUD/USD</th>
-                            <th>GBP/USD</th>
-                            <th>USD/JPY</th>
-                        </tr>
-                        <tr>
-                            <td><button type="button" class="btn btn-default">Blink</button></td>
-                            <td><button type="button" class="btn btn-default">Blink</button></td>
-                            <td><button type="button" class="btn btn-default">Blink</button></td>
-                            <td><button type="button" class="btn btn-default">Blink</button></td>
-                        </tr>
-                        <tr>
-                            <th>EUR/JPY</th>
-                            <th>EUR/GBP</th>
-                            <th>USD/CAD</th>
-                            <th>USD/CHF</th>
-                        </tr>
-                        <tr>
-                            <td><button type="button" class="btn btn-default">Blink</button></td>
-                            <td><button type="button" class="btn btn-default">Blink</button></td>
-                            <td><button type="button" class="btn btn-default">Blink</button></td>
-                            <td><button type="button" class="btn btn-default">Blink</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table id="operation" class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th>EUR/USD</th>
+                                <th>AUD/USD</th>
+                                <th>GBP/USD</th>
+                                <th>USD/JPY</th>
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="btn btn-default">Blink</button></td>
+                                <td><button type="button" class="btn btn-default">Blink</button></td>
+                                <td><button type="button" class="btn btn-default">Blink</button></td>
+                                <td><button type="button" class="btn btn-default">Blink</button></td>
+                            </tr>
+                            <tr>
+                                <th>EUR/JPY</th>
+                                <th>EUR/GBP</th>
+                                <th>USD/CAD</th>
+                                <th>USD/CHF</th>
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="btn btn-default">Blink</button></td>
+                                <td><button type="button" class="btn btn-default">Blink</button></td>
+                                <td><button type="button" class="btn btn-default">Blink</button></td>
+                                <td><button type="button" class="btn btn-default">Blink</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         </div>
@@ -159,6 +163,7 @@
                 var createDummyValue = function(cellIndex, rowIndex){
 
                     var beforeValue = $('#blink').children('tbody').eq(0).children().eq(rowIndex).children().eq(cellIndex).html();
+                    beforeValue = beforeValue.replace(/<.+?>/g, '');
                     var changeValue = beforeValue * (1+(Math.random()/10));
                     return  Math.floor( changeValue * 1000 )/1000;
                 }
